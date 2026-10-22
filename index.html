@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Courtney Wynter is a frontend developer building responsive websites and interactive web experiences.">
+  <meta name="theme-color" content="#0b0f19">
+  <title>Courtney Wynter | Frontend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navigation container" aria-label="Main navigation">
+      <a href="#home" class="brand-logo" aria-label="Courtney Wynter home">
+        <span class="brand-logo__bracket">&lt;</span><span class="brand-logo__initials">CW</span><span class="brand-logo__bracket">/&gt;</span>
+      </a>
+      <button class="navigation__menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navigation__links" id="nav-links">
+        <li><a class="navigation__link" href="#home">Home</a></li>
+        <li><a class="navigation__link" href="#about">About</a></li>
+        <li><a class="navigation__link" href="#projects">Projects</a></li>
+        <li><a class="navigation__link" href="#services">Services</a></li>
+        <li><a class="navigation__link" href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+        <span class="theme-toggle__icon" aria-hidden="true">☀</span>
+        <span class="theme-toggle__track" aria-hidden="true"><span class="theme-toggle__thumb"></span></span>
+        <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="introduction" aria-labelledby="introduction-title">
+      <div class="introduction__glow" aria-hidden="true"></div>
+      <div class="container introduction__container">
+        <div class="introduction__content">
+          <p class="introduction__eyebrow"><span class="status-dot" aria-hidden="true"></span> FRONTEND DEVELOPER <span aria-hidden="true">·</span> OPEN TO FREELANCE PROJECTS</p>
+          <h1 id="introduction-title" class="introduction__title">Hi, I'm <span>Courtney Wynter.</span></h1>
+          <p class="introduction__description">I build modern, responsive, and engaging websites that turn ideas into memorable digital experiences.</p>
+          <div class="introduction__actions">
+            <a class="button button--primary" href="#projects">Explore My Work <span aria-hidden="true">↗</span></a>
+            <a class="button button--secondary" href="#contact">Start a Project</a>
+          </div>
+          <ul class="introduction__skills" aria-label="Technologies I work with">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
+          </ul>
+        </div>
+        <div class="introduction__visual" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-card__top"><span></span><span></span><span></span><small>courtney.js</small></div>
+            <pre><code><span class="code-purple">const</span> developer = {
+  name: <span class="code-green">'Courtney Wynter'</span>,
+  focus: <span class="code-green">'Frontend'</span>,
+  skills: [
+    <span class="code-green">'HTML'</span>,
+    <span class="code-green">'CSS'</span>,
+    <span class="code-green">'JavaScript'</span>,
+    <span class="code-green">'React'</span>
+  ],
+  passion: <span class="code-green">'Building for the web'</span>
+};</code></pre>
+          </div>
+          <div class="visual-badge">✦ Design meets development</div>
+        </div>
+      </div>
+      <a class="introduction__scroll" href="#about">Scroll to explore <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <!-- Phase 2–5: Replace these placeholders with finished sections. -->
+    <!-- =========================
+     ABOUT SECTION
+========================= -->
+
+<section id="about" class="about">
+
+    <div class="container">
+
+        <div class="about__grid">
+
+            <!-- LEFT SIDE -->
+            <div class="about__content">
+
+                <span class="section__label">
+                    ABOUT ME
+                </span>
+
+                <h2 class="about__title">
+                    Turning Curiosity Into
+                    <span class="gradient-text">
+                        Creativity Through Code.
+                    </span>
+                </h2>
+
+                <p class="about__description">
+                    Hey! I'm Courtney, a frontend developer
+                    who enjoys bringing ideas to life
+                    through code.
+                </p>
+
+                <p class="about__description">
+                    What initially drew me to frontend
+                    development was discovering all the
+                    incredible things you can create
+                    with code.
+                </p>
+
+                <p class="about__description">
+                    I'm currently expanding my skills
+                    through Frontend Simplified, building
+                    projects with HTML, CSS, JavaScript,
+                    and React.
+                </p>
+
+                <p class="about__description">
+                    What excites me most about development
+                    is combining creativity with
+                    problem-solving to build websites
+                    that people enjoy using.
+                </p>
+
+                <a href="#contact" class="about__button">
+                    Let's Work Together
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="about__journey">
+
+                <div class="journey__card">
+
+                    <span class="journey__label">
+                        MY JOURNEY
+                    </span>
+
+                    <h3>Always Learning. Always Building.</h3>
+
+                    <p>
+                        Currently developing my frontend
+                        skills through Frontend Simplified
+                        while creating real-world projects.
+                    </p>
+
+                    <div class="journey__divider"></div>
+
+                    <div class="journey__detail">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                        <div>
+                            <h4>Frontend Simplified</h4>
+                            <p>Frontend Development Program</p>
+                        </div>
+
+                    </div>
+
+                    <div class="journey__detail">
+
+                        <i class="fa-solid fa-code"></i>
+
+                        <div>
+                            <h4>Project-Based Learning</h4>
+                            <p>HTML, CSS, JavaScript & React</p>
+                        </div>
+
+                    </div>
+
+                    <div class="journey__detail">
+
+                        <i class="fa-solid fa-rocket"></i>
+
+                        <div>
+                            <h4>My Goal</h4>
+                            <p>
+                                Building engaging digital
+                                experiences for clients.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- TECHNICAL SKILLS -->
+
+        <div class="skills">
+
+            <div class="skills__heading">
+
+                <span class="section__label">
+                    MY TOOLKIT
+                </span>
+
+                <h2>
+                    Technologies
+                    <span class="gradient-text">
+                        I Work With.
+                    </span>
+                </h2>
+
+                <p>
+                    The tools I use to turn ideas
+                    into interactive web experiences.
+                </p>
+
+            </div>
+
+            <div class="skills__grid">
+
+                <div class="skill__card">
+                    <i class="fa-brands fa-html5"></i>
+                    <h3>HTML5</h3>
+                    <p>Semantic Structure</p>
+                </div>
+
+                <div class="skill__card">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                    <p>Responsive Styling</p>
+                </div>
+
+                <div class="skill__card">
+                    <i class="fa-brands fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>Interactive Experiences</p>
+                </div>
+
+                <div class="skill__card">
+                    <i class="fa-brands fa-react"></i>
+                    <h3>React</h3>
+                    <p>Component-Based UI</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    <section id="projects" class="section-placeholder"><div class="container"><p class="section-placeholder__label">02 / PROJECTS</p><h2>Selected work.</h2><p>Coming next: my deployed React movie search application and other projects.</p></div></section>
+    <section id="services" class="section-placeholder"><div class="container"><p class="section-placeholder__label">03 / SERVICES</p><h2>How I can help.</h2><p>Coming next: responsive websites, frontend interfaces, and website improvements.</p></div></section>
+    <section id="contact" class="section-placeholder"><div class="container"><p class="section-placeholder__label">04 / CONTACT</p><h2>Let's build something.</h2><p>Coming next: a working contact form with EmailJS.</p></div></section>
+  </main>
+  <footer class="site-footer"><div class="container site-footer__inner"><a href="#home" class="brand-logo brand-logo--footer" aria-label="Back to top"><span class="brand-logo__bracket">&lt;</span><span class="brand-logo__initials">CW</span><span class="brand-logo__bracket">/&gt;</span></a><p>© <span id="year">2026</span> Courtney Wynter. Built with HTML, CSS & JavaScript.</p></div></footer>
+</body>
+</html>
