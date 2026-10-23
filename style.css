@@ -33,6 +33,10 @@ html {
     scroll-padding-top: 86px; 
 }
 
+section[id] {
+    scroll-margin-top: 100px;
+}
+
 body { 
     margin: 0; 
     font-family: Inter, system-ui, sans-serif; 
@@ -55,6 +59,13 @@ ul { list-style: none; margin: 0; padding: 0; }
 .navigation__links { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 34px); }
 .navigation__link { color: var(--muted); font-size: .91rem; font-weight: 600; transition: color .2s ease; }
 .navigation__link:hover { color: var(--accent); }
+.nav__links a.active {
+    color: var(--accent);
+}
+
+.nav__links a.active::after {
+    width: 100%;
+}
 .theme-toggle { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 999px; color: var(--text); padding: 8px 11px; }
 .theme-toggle__track { display: block; width: 35px; height: 19px; background: linear-gradient(120deg,var(--accent),var(--accent-2)); border-radius: 999px; padding: 2px; }
 .theme-toggle__thumb { display: block; width: 15px; height: 15px; background: white; border-radius: 50%; transform: translateX(16px); transition: transform .25s ease; }
@@ -589,8 +600,12 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* LIVE DEMO BUTTON */
 
 .project__link--primary {
-    background: var(--accent);
-    color: #fff;
+    background: linear-gradient(
+        135deg,
+        #7e22ce,
+        #1d4ed8
+    );
+    color: #ffffff;
 }
 
 .project__link--primary:hover {
@@ -618,9 +633,764 @@ ul { list-style: none; margin: 0; padding: 0; }
     cursor: not-allowed;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+/* ========================================
+   PHASE 4 - FREELANCE SERVICES
+======================================== */
+
+.services {
+    padding: 110px 0;
+    background: var(--bg-primary);
+    position: relative;
+}
+
+/* Section Heading */
+
+.services .section__heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 60px;
+}
+
+.services .section__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 15px 0 20px;
+    color: var(--text-primary);
+}
+
+.services .section__description {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Services Grid */
+
+.services__grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+/* Individual Service Cards */
+
+.service__card {
+    position: relative;
+
+    padding: 40px 35px;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Hover Animation */
+
+.service__card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 15px 40px rgba(168, 85, 247, 0.12);
+}
+
+/* Service Icon */
+
+.service__icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(168, 85, 247, 0.12);
+
+    border: 1px solid rgba(168, 85, 247, 0.2);
+
+    border-radius: 16px;
+
+    margin-bottom: 30px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.service__icon i {
+    font-size: 27px;
+    color: var(--accent);
+}
+
+.service__card:hover .service__icon {
+    transform: rotate(-5deg) scale(1.08);
+    background: rgba(168, 85, 247, 0.2);
+}
+
+/* Service Titles */
+
+.service__card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    color: var(--text-primary);
+
+    margin-bottom: 15px;
+}
+
+/* Service Descriptions */
+
+.service__card p {
+    font-size: 0.95rem;
+
+    color: var(--text-secondary);
+
+    line-height: 1.8;
+
+    max-width: 420px;
+}
+
+/* Decorative Numbers */
+
+.service__number {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    font-size: 3.5rem;
+    font-weight: 800;
+
+    color: var(--text-primary);
+
+    opacity: 0.055;
+
+    pointer-events: none;
+}
+
+/* Services Call to Action */
+
+.services__cta {
+    text-align: center;
+
+    margin-top: 65px;
+
+    padding: 45px 25px;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+}
+
+.services__cta p {
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    color: var(--text-primary);
+
+    margin-bottom: 25px;
+}
+
+/* CTA Button */
+
+.services__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 15px 30px;
+
+    background: linear-gradient(
+        135deg,
+        #a855f7,
+        #3b82f6
+    );
+
+    color: #ffffff;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.services__button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(168, 85, 247, 0.3);
+}
+
+.services__button i {
+    transition: transform 0.3s ease;
+}
+
+.services__button:hover i {
+    transform: translateX(5px);
+}
+
+/* ========================================
+   PHASE 5 - CONTACT SECTION
+======================================== */
+
+.contact {
+    padding: 110px 0;
+    background: var(--bg-secondary);
+}
+
+.contact .section__heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 65px;
+}
+
+.contact .section__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin: 15px 0 20px;
+    color: var(--text-primary);
+}
+
+.contact .section__description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Two-column layout */
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 55px;
+    align-items: start;
+}
+
+/* LEFT SIDE */
+
+.contact__info {
+    padding-top: 15px;
+}
+
+.contact__availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 16px;
+    margin-bottom: 30px;
+
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 50px;
+
+    color: #22c55e;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.contact__availability-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
+}
+
+.contact__info h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.contact__intro {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+
+/* Contact details */
+
+.contact__details {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.contact__detail {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.contact__detail-icon {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 14px;
+}
+
+.contact__detail-icon i {
+    color: var(--accent);
+    font-size: 22px;
+}
+
+.contact__detail > div:last-child {
+    min-width: 0;
+}
+
+.contact__detail span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.contact__detail a {
+    color: var(--text-primary);
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.3s ease;
+}
+
+.contact__detail a:hover {
+    color: var(--accent);
+}
+
+/* Contact note */
+
+.contact__note {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+
+    margin-top: 45px;
+    padding: 22px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+}
+
+.contact__note i {
+    color: var(--accent);
+    font-size: 20px;
+}
+
+.contact__note p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+/* RIGHT SIDE: FORM CARD */
+
+.contact__form-wrapper {
+    padding: 40px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.contact__form-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.contact__form-icon {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(168, 85, 247, 0.15);
+    border-radius: 14px;
+}
+
+.contact__form-icon i {
+    color: var(--accent);
+    font-size: 22px;
+}
+
+.contact__form-header h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+}
+
+.contact__form-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Form fields */
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.contact__form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.contact__field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.contact__field label {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.contact__field input,
+.contact__field select,
+.contact__field textarea {
+    width: 100%;
+    min-width: 0%;
+    padding: 15px 17px;
+
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.contact__field input:focus,
+.contact__field select:focus,
+.contact__field textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.12);
+}
+
+.contact__field select {
+    cursor: pointer;
+}
+
+.contact__field textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact__field select option {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+/* Submit button */
+
+.contact__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    width: 100%;
+    padding: 17px 25px;
+
+    background: linear-gradient(135deg, #a855f7, #3b82f6);
+
+    border: none;
+    border-radius: 10px;
+
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contact__submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+}
+
+.contact__submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.contact__status {
+    min-height: 20px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.contact__status--success {
+    color: #22c55e;
+}
+
+.contact__status--error {
+    color: #ef4444;
+}
+
+/* Dark mode dropdown */
+.contact__field select {
+    color-scheme: dark;
+}
+
+.contact__field select option {
+    background-color: #111827;
+    color: #ffffff;
+}
+
+/* Light mode dropdown: adjust selector to your theme implementation */
+body.light-mode .contact__field select {
+    color-scheme: light;
+}
+
+body.light-mode .contact__field select option {
+    background-color: #ffffff;
+    color: #111827;
+}
+
+/* ========================================
+   SCROLL REVEAL ANIMATIONS
+======================================== */
+
+/* Initial hidden state - only when JavaScript is ready */
+.js-reveal .reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+/* Visible state */
+.js-reveal .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slight delay for cards */
+.js-reveal .reveal--delay-1 {
+    transition-delay: 0.1s;
+}
+
+.js-reveal .reveal--delay-2 {
+    transition-delay: 0.2s;
+}
+
+.js-reveal .reveal--delay-3 {
+    transition-delay: 0.3s;
+}
+
+/* Accessibility: Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .js-reveal .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+}
+
+/* ========================================
+   RESPONSIVE CONTACT
+======================================== */
+
+@media (max-width: 900px) {
+    .contact__grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 80px 0;
+    }
+
+    .contact__form-wrapper {
+        padding: 30px 25px;
+    }
+
+    .contact__info h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact__form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__form-wrapper {
+        padding: 25px 18px;
+    }
+
+    .contact__form-header {
+        gap: 12px;
+    }
+
+    .contact__form-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact__detail {
+        gap: 12px;
+    }
+
+    .contact__detail-icon {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact__detail a,
+    .contact__field input,
+    .contact__field select,
+    .contact__field textarea,
+    .contact__submit {
+        transition: none;
+    }
+
+    .contact__submit:hover {
+        transform: none;
+    }
+}
+
+/* ========================================
+   RESPONSIVE SERVICES
+======================================== */
+
+@media (max-width: 768px) {
+
+    .services {
+        padding: 80px 0;
+    }
+
+    .services__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service__card {
+        padding: 35px 25px;
+    }
+
+    .services__cta {
+        margin-top: 45px;
+        padding: 35px 20px;
+    }
+
+    .services__cta p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .service__card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service__icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .service__icon i {
+        font-size: 24px;
+    }
+
+    .service__number {
+        font-size: 2.8rem;
+    }
+
+    .services__button {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service__card,
+    .service__icon,
+    .services__button,
+    .services__button i {
+        transition: none;
+    }
+
+    .service__card:hover,
+    .service__card:hover .service__icon,
+    .services__button:hover,
+    .services__button:hover i {
+        transform: none;
+    }
+}
 
 @media (max-width: 768px) {
 
